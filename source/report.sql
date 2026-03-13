@@ -6,7 +6,7 @@ select
   'FIU Parking' as title,
   'paw' as icon,
   '/' as link,
-  JSON('[{"link":"/","title":"Manual Count Form","active":false},{"link":"/reports.sql","title":"Reports","active":false}]') as menu_item,
+  JSON('[{"link":"/","title":"Manual Count Form","active":false},{"link":"/reports.sql","title":"Reports","active":false},{"link":"/monitor.sql","title":"DMS Monitoring","active":false}]') as menu_item,
   TRUE as sidebar,
   'https://www.fiu.edu/_assets/images/favicon.ico' as favicon;
 

@@ -20,7 +20,7 @@ SELECT
     'description_md',
     '# '||sign_name,
     'top_image',
-    'http://'||abbrev(sign_ip) ||'/daktronics/imaging/1.0/GetImage'
+    sqlpage.environment_variable('API_BASE_URL')||'/api/v1/digital-signs/'||sign_id||'/image'
   )) AS properties
 FROM
   Signs;

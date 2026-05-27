@@ -21,8 +21,6 @@ SELECT
     '# '||sign_name,
     'top_image',
     sqlpage.environment_variable('API_BASE_URL')||'/api/v1/digital-signs/'||sign_id||'/image'
-  )) AS properties
+  ) ORDER BY sign_name) AS properties
 FROM
-  Signs
-ORDER BY
-  sign_name;
+  Signs;

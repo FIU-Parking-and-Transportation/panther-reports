@@ -23,4 +23,6 @@ SELECT
     sqlpage.environment_variable('API_BASE_URL')||'/api/v1/digital-signs/'||sign_id||'/image'
   )) AS properties
 FROM
-  Signs;
+  Signs
+ORDER BY
+  sign_name;

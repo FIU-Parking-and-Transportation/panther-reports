@@ -14,3 +14,13 @@ SELECT
 WHERE 
     $action = 'insert'
 RETURNING 'redirect' AS component, 'index.sql' AS link;
+
+INSERT INTO SISPhysicalChecks(garage, zone, triggered, notes)
+SELECT
+    :garage,
+    :zone,
+    :triggered::boolean,
+    NULLIF(:notes, '')
+WHERE
+    $action = 'sis_insert'
+RETURNING 'redirect' AS component, 'sis_physical_check.sql' AS link;

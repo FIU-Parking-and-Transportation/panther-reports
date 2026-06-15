@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS SISPhysicalChecks (
+  check_id  SERIAL PRIMARY KEY,
+  garage    TEXT NOT NULL,
+  zone      TEXT NOT NULL,
+  triggered BOOLEAN NOT NULL,
+  notes     TEXT,
+  timestamp TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

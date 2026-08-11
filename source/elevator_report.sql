@@ -13,21 +13,20 @@ SELECT
 SELECT 'button' AS component;
 SELECT 'Return' AS title,
   'arrow-left' AS icon,
-  '/sis_reports.sql' AS link;
+  '/elevator_reports.sql' AS link;
 
 SELECT 'csv' AS component,
   'Download report' AS title,
   'file-download' AS icon,
   'green' AS color,
   TRUE AS bom,
-  'sis_physical_check_' || to_char(to_timestamp(:from_date, 'YYYY-MM-DD'), 'YYYYMMDD') || '-' || to_char(to_timestamp(:to_date, 'YYYY-MM-DD'), 'YYYYMMDD') AS filename;
+  'elevator_check_' || to_char(to_timestamp(:from_date, 'YYYY-MM-DD'), 'YYYYMMDD') || '-' || to_char(to_timestamp(:to_date, 'YYYY-MM-DD'), 'YYYYMMDD') AS filename;
 SELECT
   garage AS Garage,
-  zone AS Zone,
-  CASE WHEN triggered THEN 'Yes' ELSE 'No' END AS Trigger,
+  CASE WHEN stickers THEN 'Yes' ELSE 'No' END AS "Stickers in good condition",
   notes AS Notes,
   to_char((timestamp AT TIME ZONE 'EDT'), 'MM-DD-YYYY HH:MI:SS') AS Time
-FROM SISPhysicalChecks
+FROM ElevatorChecks
 WHERE timestamp >= to_timestamp(:from_date, 'YYYY-MM-DD')
   AND timestamp <= to_timestamp(:to_date || ' 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
 
@@ -37,10 +36,9 @@ SELECT 'table' AS component,
   TRUE AS striped_rows;
 SELECT
   garage AS Garage,
-  zone AS Zone,
-  CASE WHEN triggered THEN 'Yes' ELSE 'No' END AS Trigger,
+  CASE WHEN stickers THEN 'Yes' ELSE 'No' END AS "Stickers in good condition",
   notes AS Notes,
   to_char((timestamp AT TIME ZONE 'EDT'), 'MM-DD-YYYY HH:MI:SS') AS Time
-FROM SISPhysicalChecks
+FROM ElevatorChecks
 WHERE timestamp >= to_timestamp(:from_date, 'YYYY-MM-DD')
   AND timestamp <= to_timestamp(:to_date || ' 23:59:59', 'YYYY-MM-DD HH24:MI:SS');

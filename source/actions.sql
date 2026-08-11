@@ -24,3 +24,12 @@ SELECT
 WHERE
     $action = 'sis_insert'
 RETURNING 'redirect' AS component, 'sis_physical_check.sql' AS link;
+
+INSERT INTO ElevatorChecks(garage, stickers, notes)
+SELECT
+    :garage,
+    :stickers::boolean,
+    NULLIF(:notes, '')
+WHERE
+    $action = 'elevator_insert'
+RETURNING 'redirect' AS component, 'elevator_check.sql' AS link;

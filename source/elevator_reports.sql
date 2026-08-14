@@ -6,7 +6,7 @@ SELECT
   'FIU Parking' AS title,
   'paw' AS icon,
   '/' AS link,
-  JSON('[{"link":"/","title":"Manual Count Form","active":false},{"link":"/reports.sql","title":"Reports","active":false},{"link":"/monitor.sql","title":"DMS Monitoring","active":false},{"link":"/sis_physical_check.sql","title":"SIS Physical Check","active":false},{"link":"/sis_reports.sql","title":"SIS Reports","active":false},{"link":"/elevator_check.sql","title":"Elevator Check","active":false},{"link":"/elevator_reports.sql","title":"Elevator Check Reports","active":true}]') AS menu_item,
+  JSON('[{"link":"/","title":"Manual Count Form","active":false},{"link":"/manual_counts_reports.sql","title":"Manual Count Reports","active":false},{"link":"/monitor.sql","title":"DMS Monitoring","active":false},{"link":"/sis_physical_check.sql","title":"SIS Physical Check","active":false},{"link":"/sis_reports.sql","title":"SIS Reports","active":false},{"link":"/elevator_check.sql","title":"Elevator Check","active":false},{"link":"/elevator_reports.sql","title":"Elevator Check Reports","active":true}]') AS menu_item,
   TRUE AS sidebar,
   'https://www.fiu.edu/_assets/images/favicon.ico' AS favicon;
 

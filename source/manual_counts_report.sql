@@ -6,14 +6,14 @@ select
   'FIU Parking' as title,
   'paw' as icon,
   '/' as link,
-  JSON('[{"link":"/","title":"Manual Count Form","active":false},{"link":"/reports.sql","title":"Reports","active":false},{"link":"/monitor.sql","title":"DMS Monitoring","active":false},{"link":"/sis_physical_check.sql","title":"SIS Physical Check","active":false},{"link":"/sis_reports.sql","title":"SIS Reports","active":false},{"link":"/elevator_check.sql","title":"Elevator Check","active":false},{"link":"/elevator_reports.sql","title":"Elevator Check Reports","active":false}]') as menu_item,
+  JSON('[{"link":"/","title":"Manual Count Form","active":false},{"link":"/manual_counts_reports.sql","title":"Manual Count Reports","active":false},{"link":"/monitor.sql","title":"DMS Monitoring","active":false},{"link":"/sis_physical_check.sql","title":"SIS Physical Check","active":false},{"link":"/sis_reports.sql","title":"SIS Reports","active":false},{"link":"/elevator_check.sql","title":"Elevator Check","active":false},{"link":"/elevator_reports.sql","title":"Elevator Check Reports","active":false}]') as menu_item,
   TRUE as sidebar,
   'https://www.fiu.edu/_assets/images/favicon.ico' as favicon;
 
 select 'button' as component;
 select 'Return' as title,
   'arrow-left' as icon,
-  '/reports.sql' as link;
+  '/manual_counts_reports.sql' as link;
 select 'csv' as component,
   'Download report' as title,
   'file-download' as icon,

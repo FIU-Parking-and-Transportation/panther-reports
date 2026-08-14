@@ -24,6 +24,7 @@ SELECT 'csv' AS component,
 SELECT
   garage AS Garage,
   CASE WHEN stickers THEN 'Yes' ELSE 'No' END AS "Stickers in good condition",
+  CASE WHEN tvs THEN 'Yes' ELSE 'No' END AS "TVs functional",
   notes AS Notes,
   to_char((timestamp AT TIME ZONE 'EDT'), 'MM-DD-YYYY HH:MI:SS') AS Time
 FROM ElevatorChecks
@@ -37,6 +38,7 @@ SELECT 'table' AS component,
 SELECT
   garage AS Garage,
   CASE WHEN stickers THEN 'Yes' ELSE 'No' END AS "Stickers in good condition",
+  CASE WHEN tvs THEN 'Yes' ELSE 'No' END AS "TVs functional",
   notes AS Notes,
   to_char((timestamp AT TIME ZONE 'EDT'), 'MM-DD-YYYY HH:MI:SS') AS Time
 FROM ElevatorChecks

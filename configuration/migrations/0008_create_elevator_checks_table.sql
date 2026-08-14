@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS ElevatorChecks (
   check_id  SERIAL PRIMARY KEY,
   garage    TEXT NOT NULL,
   stickers  BOOLEAN NOT NULL,
+  tvs       BOOLEAN NOT NULL,
   notes     TEXT,
   timestamp TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

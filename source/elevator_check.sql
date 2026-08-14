@@ -40,6 +40,14 @@ SELECT 'stickers' AS name,
   jsonb_agg(jsonb_build_object('label', label, 'value', value)) AS options
 FROM (VALUES ('Yes', 'true'), ('No', 'false')) AS t(label, value);
 
+SELECT 'tvs' AS name,
+  'select' AS type,
+  'TVs functional?' AS label,
+  TRUE AS required,
+  'Select...' AS empty_option,
+  jsonb_agg(jsonb_build_object('label', label, 'value', value)) AS options
+FROM (VALUES ('Yes', 'true'), ('No', 'false')) AS t(label, value);
+
 SELECT 'notes' AS name,
   'textarea' AS type,
   'Notes' AS label,
